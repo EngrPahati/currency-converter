@@ -30,7 +30,12 @@ export default function App() {
       <input
         type="text"
         value={amount}
-        onChange={e => setAmount(Number(e.target.value))}
+        onChange={e => {
+          if (Number(e.target.value)) {
+            setAmount(Number(e.target.value))
+          }
+        }
+      }
         // disabled={isLoading}
       />
       <select value={ fromCur} onChange={e => setFromCur(e.target.value)} disabled={isLoading}>
